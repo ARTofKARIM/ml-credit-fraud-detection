@@ -1,0 +1,25 @@
+data:
+  path: "data/creditcard.csv"
+  test_size: 0.2
+  random_state: 42
+  target_column: "Class"
+
+models:
+  isolation_forest:
+    n_estimators: 100
+    contamination: 0.01
+    random_state: 42
+  lof:
+    n_neighbors: 20
+    contamination: 0.01
+  autoencoder:
+    encoding_dim: 14
+    hidden_layers: [64, 32, 14, 32, 64]
+    epochs: 50
+    batch_size: 32
+    learning_rate: 0.001
+
+output:
+  results_dir: "results/"
+  plots_dir: "results/plots/"
+  model_dir: "models/"
